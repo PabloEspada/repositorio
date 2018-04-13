@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    
+     <meta charset="utf-8">
+     <meta name="description" content="Ejemplo de HTML5">
+     <meta name="keywords" content="HTML5, CSS3, Javascript">
+     
+     <!-- AQUI incluimos un archiuvo js -->
+     <script src="js/funciones.js"></script>
+     
+     <!-- LLamada a la pagina de estilos-->
+     <link rel="stylesheet" href="css/estilos.css">
+     
+     <!-- Para datatables -->
+     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+     <!-- Para data table -->
+     <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" ></script>
+     <script>
+         $(document).ready(function() {
+           $('#example').DataTable( {
+             "scrollY":        "400px",
+             "scrollCollapse": true,
+             
+            "language": {
+            "lengthMenu": "Muestra _MENU_ por paginas",
+            "zeroRecords": "Sin resultados ",
+            "info": "Numero de paginas _PAGE_ de _PAGES_",
+            "infoEmpty": "Sin datos",
+            "infoFiltered": "(Busca from _MAX_ total records)",
+            "sSearch": "Filtrar:",
+                "oPaginate": {
+                                  "sNext": "Siguiente",
+                                  "sPrevious": "Anterior"
+                            },
+            },
+            "order": [[ 1, "desc" ]]
+           });
+          } );
+     </script>
+     <!-- Tabla 2 -->
+     <script>
+       
+ var dataSet = [
+               ["Javier","3500","100"],
+               ["Fran","2000","200"],
+               ["Ana","2750","100"],
+               ["Pablo","5000","10"],
+               ];
+
+        
+        $(document).ready(function() {
+            $('#ejemplo').DataTable( {
+            data: dataSet,
+            columns: [
+                    { title: "Nombre" },
+                    { title: "Sueldo" },
+                    { title: "Horas" }
+              ]
+             } );
+        } );
+     </script>
+     
+     <title> </title>
+</head>
+
+<body>
+<!-- cabecera de la pagina -->
+     <header>
+           <h1>Este es el titulo principal</h1>
+     </header>
+
+<!--  justo debajo de la cabecera, menu... -->
+     <nav>
+           <ul>
+                 <li class="botonactivo">Home</li>
+                 <li> <a href="contacto.html">Contacto</a></li>
+          </ul>
+         
+     </nav>
+
+<!-- contenedor del centro -->
+     <section>
+          <!-- imagenes si puede ser el width al 100% -->
+          <img src="imagenes/imagen1.jpeg" alt="Ordenador de mesa" title="Esto se vera al pasar el raton" width="20%" >
+           <small>Derechos Reservados &copy; 2011 MinkBooks</small>
+           <h1>Titulo</h1>
+          <p id="parrafo1" onclick="muestratexto()">Soy un parrafo </p>
+          
+          <p id="nombre" onclick="concatena()">CARLOS</p>
+          <p id="apellidos">CODES MILLÁN</p>
+          <p id="nombrecompleto"></p>
+          
+          
+          
+          
+          
+          <input type="number"  id="num1" placeholder="Introduce un numero" />
+          <input type="number"  id="num2" placeholder="Introduce un numero" />
+          
+          <input type="button" value="suma" name="suma" onclick="suma()"; >
+          <input type="button" value="resta"  name="resta" onclick="resta()";>
+          <input type="button" value="multiplica"  name="multiplica" onclick="multiplica()";>
+          <input type="button" value="divide"  name="divide" onclick="divide()";>
+          <input type="button" value="exponente"  name="exponente" onclick="exponente()";>
+          <input type="button" value="parimpar"  name="parimpar" onclick="parimpar()";>
+          <p id="resultado1"> </p>
+          <p id="resultado"> </p>
+          
+          <p onclick="muestracoches()"> Muestra coches </p>
+          <p id="listadocoches"></p>
+          
+          <p>Hola pablo</p>
+          
+          
+          
+          <p onclick="pesomax()"> Muestra el numero de los que pesan más de 80k </p>
+          <p id="peso"></p>
+          
+     
+         <p onclick="total()"> Muestra las notas </p>
+          <p id="calificaciones"></p>
+          
+          
+          
+          
+          <p onclick="objetoarray()"> Muestra personas </p>
+          <p id="empleados"></p>
+          <p id="empleados1"></p>
+          <p id="empleados2"></p>
+          
+          <table id="example">
+               <thead>
+               <tr>
+                    <th>Nombre</th>
+                    <th>Sueldo</th>
+                    <th>Horas</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                    <td>Javier</td>
+                    <td>3500</td>
+                    <td>100</td>
+               </tr>
+               <tr>
+                    <td>Fran</td>
+                    <td>2000</td>
+                    <td>200</td>
+               </tr>
+               <tr>
+                    <td>Ana</td>
+                    <td>2500</td>
+                    <td>150</td>
+               </tr>
+               </tbody>
+               
+          </table>
+          
+          
+          
+          <table id="ejemplo">
+            
+          </table>
+          
+          
+          
+          
+          
+           <article>Soy un <em>article</em> en cursiva </article>
+           <article>Soy un segundo <strong>article</strong> en negrita </article>
+         
+           <p class="rojo">Cancion de BadBunny<sup>Muy Top</sup></p>
+            
+            
+            <audio id="medio" controls>
+            <source src="sonido/Madura.mp3">
+            </audio>  
+           <p>MELENDI <sub>muy</sub> TOP</p>
+           
+     <video id="medio" width="100%" height="40%" preload controls loop poster="imagenes/fotomelendi.jpg">
+          
+          <source src="videos/melendi.mp4">
+          
+     </video>
+     
+     </section>
+     
+<!--  barra lateral-->
+     <aside>
+          <blockquote>Mensaje número uno</blockquote>
+          <blockquote>Mensaje número dos</blockquote>
+     </aside>
+     
+<!--  pie de pagina -->
+     <footer>
+         <p id="piepagina"> Derechos Reservados &copy; 2010-2011 <a href="http://google.com" target="_blank"> Carlos Codes </a> </p>        
+     </footer>
+
+</body>
+
+
+</html>
